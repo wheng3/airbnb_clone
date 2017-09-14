@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# airbnb_clone
+Cloning Airbnb with Ruby on Rails
+>>>>>>> 1990db182749c1c8ac3c7d33674e4d23c7a14e8f
