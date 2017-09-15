@@ -32,6 +32,9 @@ gem "clearance"
 # Use figaro to protect sensitive information in configuration
 gem 'figaro'
 
+#Allow user to sign in website with facebook account
+gem 'omniauth-facebook'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
