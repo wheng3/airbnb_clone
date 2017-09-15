@@ -26,8 +26,11 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-#Use clearance for use authentication
+# Use clearance for use authentication
 gem "clearance"
+
+# Use figaro to protect sensitive information in configuration
+gem 'figaro'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
