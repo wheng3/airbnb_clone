@@ -3,6 +3,16 @@
   <%= form.text_field :email, type: 'email' %>
 </div>
 
+<div class="first_name-field">
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name, type: 'string' %>
+</div>
+
+<div class="last_name-field">
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name, type: 'string' %>
+</div>
+
 <div class="password-field">
   <%= form.label :password %>
   <%= form.password_field :password %>
