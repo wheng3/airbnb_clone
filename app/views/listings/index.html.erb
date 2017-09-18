@@ -1,0 +1,11 @@
+<h1>Listings</h1>
+<hr>
+<% @listings.each do |listing| %>
+  <h2><%= listing.name %></h2>
+  <p>
+  <%= listing.description %>
+  </p>
+<% end %>
+<hr>
+<%= paginate @listings %>
+<%= page_entries_info @listings %>

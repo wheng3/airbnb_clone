@@ -1,12 +1,14 @@
 # if Clearance.configuration.routes_enabled?
   Rails.application.routes.draw do
   
-  root to: "pages#index"
+  get 'listings/index'
+
+  root to: "listings#index"
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
-  resources :users, controller: "users", only: [:create, :edit] do
+  resources :users, controller: "users", only: [:create] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]

@@ -28,15 +28,14 @@ gem 'jbuilder', '~> 2.5'
 
 # Use clearance for use authentication
 gem "clearance"
-
 # Use figaro to protect sensitive information in configuration
 gem 'figaro'
-
 #Allow user to sign in website with facebook account
 gem 'omniauth-facebook'
-
 #Use Faker for seeding
 gem 'faker'
+#Paginator
+gem 'kaminari'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
