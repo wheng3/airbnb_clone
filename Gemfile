@@ -35,6 +35,9 @@ gem 'figaro'
 #Allow user to sign in website with facebook account
 gem 'omniauth-facebook'
 
+#Use Faker for seeding
+gem 'faker'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
