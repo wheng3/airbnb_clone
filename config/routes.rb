@@ -1,7 +1,5 @@
 # if Clearance.configuration.routes_enabled?
   Rails.application.routes.draw do
-  
-  get 'listings/index'
 
   root to: "listings#index"
 

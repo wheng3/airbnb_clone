@@ -36,6 +36,9 @@ gem 'omniauth-facebook'
 gem 'faker'
 #Paginator
 gem 'kaminari'
+#Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'autoprefixer-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
