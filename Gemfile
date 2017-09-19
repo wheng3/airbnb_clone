@@ -37,8 +37,9 @@ gem 'faker'
 #Paginator
 gem 'kaminari'
 #Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap'
 gem 'autoprefixer-rails'
+gem 'jquery-rails'
 #Allow user to upload files
 gem 'carrierwave', '~> 1.0'
 
