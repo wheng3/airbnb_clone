@@ -22,8 +22,8 @@ class ListingsController < ApplicationController
 	end
 
 	def listing_from_params
-		params.require(:listing).permit(:user_id, :name, :property_type, :room_type, :room_number, :bed_number, 
-			:guest_number, :country, :state, :city, :address, :price, :description).merge(user_id: params['user_id'])
+		params.require(:listing).permit(:name, :property_type, :room_type, :room_number, :bed_number, 
+			:guest_number, :country, :state, :city, :address, :price, :description, {photos: []}).merge(user_id: params['user_id'])
 	end
 
 end
