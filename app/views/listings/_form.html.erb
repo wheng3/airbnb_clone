@@ -1,0 +1,15 @@
+<%= form_for :listing, url: {controller: 'listings', action: 'create'} do |f| %>
+  Name: <%= f.text_field :name, type: 'string' %><br />
+  Property Type : <%= f.text_field :property_type, type: 'string' %><br />
+  Room Type : <%= f.text_field :room_type, type: 'integer' %><br />
+  Room Number : <%= f.text_field :room_number, type: 'integer' %><br />
+  Bed Number : <%= f.text_field :bed_number, type: 'integer' %><br />
+  Guest Number : <%= f.text_field :guest_number, type: 'integer' %><br />
+  Country: <%= f.text_field :country, type: 'string' %><br />
+  State: <%= f.text_field :state, type: 'string' %><br />
+  City: <%= f.text_field :city, type: 'string' %><br />
+  Address: <%= f.text_field :address, type: 'string' %><br />
+  Price: <%= f.text_field :price, type: 'decimal' %><br />
+  Description    : <%= f.text_area :description, type: 'text' %><br />
+  <%= f.submit %>
+<% end %>

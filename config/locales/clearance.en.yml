@@ -57,3 +57,7 @@ en:
     new:
       sign_in: Sign in
       title: Sign up
+  listings:
+    new:
+      host: Host
+      title: Make A New Listing

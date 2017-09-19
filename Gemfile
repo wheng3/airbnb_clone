@@ -39,6 +39,8 @@ gem 'kaminari'
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
+#Allow user to upload files
+gem 'carrierwave', '~> 1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

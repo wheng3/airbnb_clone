@@ -1,6 +1,7 @@
 require 'securerandom'
 
 class User < ApplicationRecord
+  enum access_level: [:customer, :moderator, :superadmin]
   include Clearance::User
     has_many :authentications, dependent: :destroy
     has_many :listings, dependent: :destroy

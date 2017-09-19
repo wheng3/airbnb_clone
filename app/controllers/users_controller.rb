@@ -16,6 +16,10 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  def superadmin_secret
+    allowed?(action: action_name, user: current_user)
+  end
+
   private
 
   def user_from_params
