@@ -25,14 +25,15 @@ class UsersController < Clearance::UsersController
       render template: "users/edit"
     else
       redirect '/'
-      flash[:notice] = "Sorry you can't edit other users' profile"
+      flash[:faliure] = "Sorry you can't edit other users' profile"
     end
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_from_params)
-      # Handle a successful update.
+      flash[:success] = "Successfully updated user profile"
+      render template: "users/edit"
     else
       render 'edit'
     end

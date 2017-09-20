@@ -1,0 +1,18 @@
+<div class="date-field datepicker">
+  <%= form.label :start_date %>
+  <%= form.date_select :start_date, class: "form-control" %>
+</div>
+
+<div class="date-field datepicker">
+  <%= form.label :end_date %>
+  <%= form.date_select :end_date, class: "form-control"%>
+</div>
+
+<div class="occupant_number-field">
+  <%= form.label :occupant_number %>
+  <%= form.number_field :occupant_number, class: "form-control"%>
+</div>
+
+<div class="submit-field">
+  <%= form.submit value: "Book now", class: "btn btn-primary" %>
+</div>

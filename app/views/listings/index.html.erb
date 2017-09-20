@@ -1,25 +1,27 @@
-<h1>Listings
-	<small>Book unique homes and experience a city like a local.</small>
-</h1>
-<div class="row">
-	<% @listings.each do |listing| %>
-		<% @img_url = listing.photos[0] %>
-		<% @img_url ||= "http://placehold.it/700x400" %>
-		<div class="col-lg-3 col-md-4 col-sm-6">
-		  <div class="card">
-		    <%= link_to user_listing_path(user_id: listing.user_id, id: listing.id) do %>
-		    	<img class="card-img-top" style="height: 400px;" src=<%= @img_url %> alt="">
-		    <% end %>
-		    <div class="card-body">
-		      <h4 class="card-title">
-		      	<%= link_to t(listing.name), user_listing_path(user_id: listing.user_id, id: listing.id) %>
-		      </h4>
-		      <p class="card-text"><%= listing.description %></p>
-		    </div>
-		  </div>
-		</div>
-	<% end %>
-</div>
+<div class="container">
+	<h1>Listings
+		<small>Book unique homes and experience a city like a local.</small>
+	</h1>
+	<div class="row">
+		<% @listings.each do |listing| %>
+			<% @img_url = listing.photos[0] %>
+			<% @img_url ||= "http://placehold.it/700x400" %>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+			  <div class="card">
+			    <%= link_to user_listing_path(user_id: listing.user_id, id: listing.id) do %>
+			    	<img class="card-img-top" style="height: 400px;" src=<%= @img_url %> alt="">
+			    <% end %>
+			    <div class="card-body">
+			      <h4 class="card-title">
+			      	<%= link_to t(listing.name), user_listing_path(user_id: listing.user_id, id: listing.id) %>
+			      </h4>
+			      <p class="card-text"><%= listing.description %></p>
+			    </div>
+			  </div>
+			</div>
+		<% end %>
+	</div>
 
-<%= paginate @listings %>
-<%= page_entries_info @listings %>
+	<%= paginate @listings %>
+	<%= page_entries_info @listings %>
+</div>

@@ -37,7 +37,7 @@
       </div>
     </header>
 
-        <section class="py-5">
+    <section class="py-5">
       <div class="container">
         <h1><%= @listing.name %></h1>
         <p>Posted by: <%= @listing.user.first_name + ' ' + @listing.user.last_name %></p>
@@ -50,6 +50,15 @@
         <hr>
         <h3>Description</h3>
         <p><%= @listing.description %></p>
+      </div>
+    </section>
+    <hr>
+    <section>
+      <div class="container">
+        <h3>Book now</h3>
+        <%= form_for [@listing, @reservation] do |form| %>
+          <%= render partial: '/reservations/form', object:form %>
+        <% end %>
       </div>
     </section>
 

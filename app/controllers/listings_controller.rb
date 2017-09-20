@@ -28,6 +28,7 @@ class ListingsController < ApplicationController
 
 	def show
 		@listing = Listing.find_by(user_id: params[:user_id], id: params[:id])
+		@reservation = @listing.reservations.new
 	end
 
 end
