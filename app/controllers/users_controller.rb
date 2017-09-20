@@ -29,10 +29,19 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_from_params)
+      # Handle a successful update.
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def user_from_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password, {avatar: []})
+    params.require(:user).permit(:email, :first_name, :last_name, :password, :avatar)
     # email = user_params.delete(:email)
     # first_name = user_params.delete(:first_name)
     # last_name = user_params.delete(:last_name)

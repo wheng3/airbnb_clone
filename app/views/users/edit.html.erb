@@ -1,9 +1,14 @@
 <div id="clearance" class="user-edit">
-  <h2><%= Edit Profile %></h2>
-<%= form_for :user, url: edit_user_path(@user), action: :update, method: :post  do |f| %>
-    <%= f.text_field :first_name %>
-    <%= f.text_field :last_name %>
-    <%= f.text_field :email %>
-    <%= f.submit "Update Account" %>
-<% end %>
+  <h2>Edit Profile</h2>
+	<%= form_for @user do |f| %>
+	    First Name: <%= f.text_field :first_name, placeholder:'First Name' %>
+	    <br>
+	    Last Name: <%= f.text_field :last_name, placeholder:'Last Name'%>
+	    <br>
+	    Email: <%= f.text_field :email, placeholder:'Email' %>
+	    <br>
+		Upload Avatar: <%= f.file_field :avatar%>
+		<br>
+	    <%= f.submit "Update Account" %>
+	<% end %>
 </div>
