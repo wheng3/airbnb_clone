@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	def index
-		@listings = Listing.page(params[:page]).per(8)
+		@listings = Listing.order(created_at: :desc).page(params[:page]).per(8)
 	end
 
 	def new
@@ -24,6 +24,10 @@ class ListingsController < ApplicationController
 	def listing_from_params
 		params.require(:listing).permit(:name, :property_type, :room_type, :room_number, :bed_number, 
 			:guest_number, :country, :state, :city, :address, :price, :description, {photos: []}).merge(user_id: params['user_id'])
+	end
+
+	def show
+		@listing = Listing.find_by(user_id: params[:user_id], id: params[:id])
 	end
 
 end

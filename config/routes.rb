@@ -6,7 +6,7 @@
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
-  resources :users, controller: "users", only: [:create] do
+  resources :users, controller: "users", only: [:create, :edit] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]

@@ -19,6 +19,16 @@ class UsersController < Clearance::UsersController
     allowed?(action: action_name, user: current_user)
   end
 
+  def edit
+    if current_user == User.find(params[:id])
+      @user = current_user
+      render template: "users/edit"
+    else
+      redirect '/'
+      flash[:notice] = "Sorry you can't edit other users' profile"
+    end
+  end
+
   private
 
   def user_from_params
