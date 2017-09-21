@@ -10,6 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require rails-ujs
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
+//= require turbolinks
+//= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+	$('#startdatepicker').datepicker({orientation: 'bottom'});
+	$('#enddatepicker').datepicker({orientation: 'bottom'});
+});
