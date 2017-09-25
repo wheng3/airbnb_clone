@@ -24,5 +24,8 @@
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   get "/superadmin_secret" => "users#superadmin_secret"
 
+  get "/listings" => "users#listings", as: "listings"
+  get "/reservations" => "users#reservations", as: "reservations"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end

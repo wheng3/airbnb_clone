@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-3 col-12">
 		<div class="form-group">
 			<div class="input-group date" id="startdatepicker">
 				<%= form.text_field :start_date, class: "form-control", placeholder:"Start Date" %>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-3 col-12">
 		<div class="form-group">
 			<div class="input-group date" id="enddatepicker">
 				<%= form.text_field :end_date, class: "form-control", placeholder:"End Date" %>
@@ -25,16 +25,16 @@
 </div>
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-3 col-12">
 		<div class="occupant_number-field">
-			<%= form.number_field :occupant_number, class: "form-control", placeholder:"Number of Guests"%>
+			<%= form.number_field :occupant_number, class: "form-control", placeholder:"Number of Guests", min: "0" %>
 		</div>
 	</div>
 </div>
 
 <br>
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-3 col-12">
 <div class="submit-field">
 	<%= form.submit value: "Book now", class: "btn btn-primary btn-lg" %>
 </div>

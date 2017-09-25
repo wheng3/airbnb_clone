@@ -17,8 +17,20 @@
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
-
 document.addEventListener("turbolinks:load", function() {
-	$('#startdatepicker').datepicker({orientation: 'bottom'});
-	$('#enddatepicker').datepicker({orientation: 'bottom'});
+	$('#startdatepicker').datepicker({
+		orientation: 'bottom',
+		format: 'dd/mm/yyyy',
+		autoclose: true,
+		todayHighlight: true,
+		startDate: new Date() 
+	});
+
+	$('#enddatepicker').datepicker({
+		orientation: 'bottom',
+		format: 'dd/mm/yyyy',
+		autoclose: true,
+		todayHighlight: true,
+		startDate: new Date()
+	});
 });

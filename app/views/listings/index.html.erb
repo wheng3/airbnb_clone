@@ -1,7 +1,9 @@
 <div class="container">
-	<h1>Listings
-		<small>Book unique homes and experience a city like a local.</small>
-	</h1>
+	<section>
+		<h1>Listings</h1>
+		<br>
+		<p>Book unique homes and experience a city like a local.</p>
+	</section>
 	<div class="row">
 		<% @listings.each do |listing| %>
 			<% @img_url = listing.photos[0] %>
@@ -21,7 +23,6 @@
 			</div>
 		<% end %>
 	</div>
-
 	<%= paginate @listings %>
 	<%= page_entries_info @listings %>
 </div>
