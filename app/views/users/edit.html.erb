@@ -1,14 +1,56 @@
-<div id="clearance" class="user-edit">
-  <h2>Edit Profile</h2>
+<div class="container user-edit" id="clearance">
+    <h1>Edit Profile</h1>
+  	<hr>
 	<%= form_for @user do |f| %>
-	    First Name: <%= f.text_field :first_name, placeholder:'First Name' %>
-	    <br>
-	    Last Name: <%= f.text_field :last_name, placeholder:'Last Name'%>
-	    <br>
-	    Email: <%= f.text_field :email, placeholder:'Email' %>
-	    <br>
-		Upload Avatar: <%= f.file_field :avatar%>
-		<br>
-	    <%= f.submit "Update Account" %>
+		<div class="row">
+	      <!-- left column -->
+	      <div class="col-md-3">
+	        <div class="text-center">
+	          <img src=<%= @user.avatar.url %> class="avatar img-circle" alt="avatar">
+	          <h6>Upload a different photo...</h6>
+	          <%= f.file_field :avatar, class: "form-control"%>
+	        </div>
+	      </div>
+	      
+	      <!-- edit form column -->
+	      <div class="col-md-9 personal-info">
+	        <div class="alert alert-info alert-dismissable">
+	          <a class="panel-close close" data-dismiss="alert">×</a> 
+	          <i class="fa fa-coffee"></i>
+	          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+	        </div>
+	        <h3>Personal info</h3>
+	        
+	        <form class="form-horizontal" role="form">
+	          <div class="form-group">
+	            <label class="col-lg-3 control-label">First name:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_field :first_name, placeholder:'First Name', value: @user.first_name %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-3 control-label">Last name:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_field :last_name, placeholder:'Last Name', value: @user.last_name %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-3 control-label">Email:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_field :email, placeholder:'Email', value: @user.email %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-md-3 control-label"></label>
+	            <div class="col-md-8">
+	              <%= f.submit "Save Changes", class:"btn btn-primary" %>
+	              <span></span>
+	              <%= button_tag "Cancel", type: "reset", class:"btn btn-default" %>
+	            </div>
+	          </div>
+	        </form>
+	      </div>
+	  	</div>
 	<% end %>
 </div>
+<hr>

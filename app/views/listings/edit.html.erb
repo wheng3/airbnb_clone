@@ -1,0 +1,55 @@
+<div class="container user-edit" id="clearance">
+    <h1>Edit Listing</h1>
+  	<hr>
+	<%= form_for [@user, @listing] do |f| %>
+	        <h3>Listing info</h3>
+	        
+	        <form class="form-inline" role="form">
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Name:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_field :name, placeholder:'Name', value: @listing.name %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Number of Guests:</label>
+	            <div class="col-lg-8">
+	              <%= f.number_field :guest_number, placeholder:'Number of Guests', value: @listing.guest_number %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Number of Beds:</label>
+	            <div class="col-lg-8">
+	              <%= f.number_field :bed_number, placeholder:'Number of Beds', value: @listing.bed_number %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Address:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_field :address, placeholder:'Address', value: @listing.address %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Price:</label>
+	            <div class="col-lg-8">
+	              <%= f.number_field :pricer, placeholder:'Price', value: @listing.price %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-lg-4 control-label">Description:</label>
+	            <div class="col-lg-8">
+	              <%= f.text_area :description, placeholder:'Description', value: @listing.description %>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="col-md-4 control-label"></label>
+	            <div class="col-md-8">
+	              <%= f.submit "Save Changes", class:"btn btn-primary" %>
+	              <span></span>
+	              <%= button_tag "Cancel", type: "reset", class:"btn btn-default" %>
+	            </div>
+	          </div>
+	        </form>
+	<% end %>
+</div>
+<hr>

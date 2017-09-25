@@ -1,62 +1,63 @@
-    <header>
-      <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <% if (@listing.photos.nil? or @listing.photos.count <= 0) %>
-            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-          <% else %>
-            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-            <% for i in 1..@listing.photos.count-1 %>
-              <li data-target="#carouselIndicators" data-slide-to="<%= i %>"></li>
-            <% end %>
-          <% end %>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Set the background image for this slide in the line below -->
-          <% if (@listing.photos.nil? or @listing.photos.count <= 0) %>
-            <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Sorry</h3>
-                <p>Hoster didn't upload any images</p>
-              </div>
-            </div>
-            <% else %>
-            <div class="carousel-item active" style="background-image: url('<%= @listing.photos[0].url %>')"></div>
-              <% for i in 1..@listing.photos.count-1 %>
-                <div class="carousel-item" style="background-image: url('<%= @listing.photos[i].url %>')"></div>
-              <% end %>
-          <% end %>
+<header>
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% if (@listing.photos.nil? or @listing.photos.count <= 0) %>
+        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <% else %>
+        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <% for i in 1..@listing.photos.count-1 %>
+          <li data-target="#carouselIndicators" data-slide-to="<%= i %>"></li>
+        <% end %>
+      <% end %>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Set the background image for this slide in the line below -->
+      <% if (@listing.photos.nil? or @listing.photos.count <= 0) %>
+        <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Sorry</h3>
+            <p>Hoster didn't upload any images</p>
+          </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </header>
+        <% else %>
+        <div class="carousel-item active" style="background-image: url('<%= @listing.photos[0].url %>')"></div>
+          <% for i in 1..@listing.photos.count-1 %>
+            <div class="carousel-item" style="background-image: url('<%= @listing.photos[i].url %>')"></div>
+          <% end %>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</header>
 
-        <section class="py-5">
-      <div class="container">
-        <h1><%= @listing.name %></h1>
-        <p>Posted by: <%= @listing.user.first_name + ' ' + @listing.user.last_name %></p>
-        <hr>
-        <h3>Information</h3>
-        <p>Price: <%= @listing.price %></p>
-        <p>Bed number: <%= @listing.bed_number %></p>
-        <p>Guest number: <%= @listing.guest_number %></p>
-        <p>Address: <%= @listing.address %></p>
-        <hr>
-        <h3>Description</h3>
-        <p><%= @listing.description %></p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Airbnb Clone</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+<section class="py-5">
+  <div class="container">
+    <h1><%= @listing.name %></h1>
+    <p>Posted by: <%= @listing.user.first_name + ' ' + @listing.user.last_name %></p>
+    <hr>
+    <h3>Information</h3>
+    <p>Price: <%= @listing.price %></p>
+    <p>Bed number: <%= @listing.bed_number %></p>
+    <p>Guest number: <%= @listing.guest_number %></p>
+    <p>Address: <%= @listing.address %></p>
+    <hr>
+    <h3>Description</h3>
+    <p><%= @listing.description %></p>
+  </div>
+</section>
+<hr>
+<section>
+  <div class="container">
+    <h3>Book now</h3>
+    <%= form_for [@listing, @reservation] do |form| %>
+      <%= render partial: '/reservations/form', object:form %>
+    <% end %>
+  </div>
+</section>

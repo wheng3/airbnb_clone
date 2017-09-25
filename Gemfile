@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -37,11 +37,16 @@ gem 'faker'
 #Paginator
 gem 'kaminari'
 #Bootstrap
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap-datepicker-rails'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+#Font Awesome
+gem "font-awesome-rails"
 #Allow user to upload files
 gem 'carrierwave', '~> 1.0'
+#Allow user to search and filter
+gem 'ransack'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
