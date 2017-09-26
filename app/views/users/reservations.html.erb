@@ -1,48 +1,51 @@
-<h1>Your trips</h1>
-<hr>
-<% if @reservations.count<= 0 %>
-	<h4>No upcoming trips! Choose your next adventure!</h4>
-	<p>Invite more friends to join Airbnb!</p>
-<% else %>
-	<table class="table table-hover">
-	  <thead>
-	    <tr>
-	      <th>#</th>
-	      <th>Trip</th>
-	      <th>Start Date</th>
-	      <th>End Date</th>
-	      <th>Number of Occupants</th>
-	      <th>Price</th>
-	      <th>Booked on</th>
-	      <th></th>
-	    </tr>
-	  </thead>
-	  
-	  <tbody>
-	  	<% i = 1 %>
-	  	<% @reservations.each do |reservation| %>
-	  		<% listing = Listing.find(reservation.listing_id) %>
+
+<div class="container">
+	<h1>Your trips</h1>
+	<hr>
+	<% if @reservations.count<= 0 %>
+		<h4>No upcoming trips! Choose your next adventure!</h4>
+		<p>Invite more friends to join Airbnb!</p>
+	<% else %>
+		<table class="table table-hover">
+		  <thead>
 		    <tr>
-		      <th scope="row"><%= i %></th>
-		      <td><%= listing.name %></td>
-		      <td><%= reservation.start_date %></td>
-		      <td><%= reservation.end_date %></td>
-		      <td><%= reservation.occupant_number %></td>
-		      <td><%= listing.price %></td>
-		      <td><%= reservation.created_at %></td>
-		      <td>
-			    <%= link_to user_listing_path(id: listing.id, user_id: listing.user_id), class: "btn btn-primary a-btn-slide-text" do%>
-			    	View
-			    	<span class="fa fa-eye" aria-hidden="true"></span>
-			    <% end %>
-			    <%= link_to listing_reservation_path(id: reservation.id, listing_id: listing.id), method: :delete, data:{confirm: "Are you sure you want to delete this reservation?"}, class: "btn btn-primary a-btn-slide-text" do%>
-			    	Delete
-			    	<span class="fa fa-trash" aria-hidden="true"></span>
-			    <% end %>
-			</td>
-			<% i += 1 %>
-		  </tr>
-	    <% end %>
-	  </tbody>
-	</table>
-<% end %>
+		      <th>#</th>
+		      <th>Trip</th>
+		      <th>Start Date</th>
+		      <th>End Date</th>
+		      <th>Number of Occupants</th>
+		      <th>Price</th>
+		      <th>Booked on</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  
+		  <tbody>
+		  	<% i = 1 %>
+		  	<% @reservations.each do |reservation| %>
+		  		<% listing = Listing.find(reservation.listing_id) %>
+			    <tr>
+			      <th scope="row"><%= i %></th>
+			      <td><%= listing.name %></td>
+			      <td><%= reservation.start_date %></td>
+			      <td><%= reservation.end_date %></td>
+			      <td><%= reservation.occupant_number %></td>
+			      <td><%= listing.price %></td>
+			      <td><%= reservation.created_at %></td>
+			      <td>
+				    <%= link_to user_listing_path(id: listing.id, user_id: listing.user_id), class: "btn btn-primary a-btn-slide-text" do%>
+				    	View
+				    	<span class="fa fa-eye" aria-hidden="true"></span>
+				    <% end %>
+				    <%= link_to listing_reservation_path(id: reservation.id, listing_id: listing.id), method: :delete, data:{confirm: "Are you sure you want to delete this reservation?"}, class: "btn btn-primary a-btn-slide-text" do%>
+				    	Delete
+				    	<span class="fa fa-trash" aria-hidden="true"></span>
+				    <% end %>
+				</td>
+				<% i += 1 %>
+			  </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	<% end %>
+</div>

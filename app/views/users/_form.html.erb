@@ -1,27 +1,87 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
-</div>
-
-<div class="first_name-field">
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name, type: 'string' %>
-</div>
-
-<div class="last_name-field">
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name, type: 'string' %>
-</div>
-
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</div>
-
-<div class="avatar_field">
-	<%= form.file_field :avatar %>
-</div>
-
-<div class="submit-field">
-  <%= form.submit %>
-</div>
+<%= form_for @user, class: "form-horizontal" do |form| %>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>Register New User</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :first_name %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                    <%= form.text_field :first_name, type: 'string', class: "form-control", placeholder: "First name", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :last_name %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa"></i></div>
+                    <%= form.text_field :last_name, type: 'string', class: "form-control", placeholder: "Last name", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :email %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                    <%= form.text_field :email, type: 'email', class: "form-control", placeholder: "you@example.com", autofocus:true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :password %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group has-danger">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                    <%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :avatar %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group has-danger">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+                        <%= form.file_field :avatar%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <%= button_tag type: 'submit', class: "btn btn-success" do %>
+              <i class="fa fa-user-plus"></i>
+              Register
+            <% end %>
+            <%= link_to sign_in_path, class: "btn btn-primary" do%>
+               <i class="fa fa-sign-in"></i>
+               Sign in
+            <% end %>
+        </div>
+    </div>
+<% end %>

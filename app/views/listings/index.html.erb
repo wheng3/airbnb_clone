@@ -1,9 +1,15 @@
+<!-- Header -->
+<header class="intro-header">
+  <div class="container">
+    <div class="intro-message">
+      <h1>Listings</h1>
+      <h3>Book unique homes and experience a city like a local.</h3>
+      <hr class="intro-divider">
+    </div>
+  </div>
+</header>
+
 <div class="container">
-	<section>
-		<h1>Listings</h1>
-		<br>
-		<p>Book unique homes and experience a city like a local.</p>
-	</section>
 	<div class="row">
 		<% @listings.each do |listing| %>
 			<% @img_url = listing.photos[0] %>
