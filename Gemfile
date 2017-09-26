@@ -49,6 +49,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'ransack'
 #Preview email before sending
 gem "letter_opener", :group => :development
+#Sidekiq gem to speed up background jobs for emails
+gem 'sidekiq', '~> 5.0', '>= 5.0.4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
