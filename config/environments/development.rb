@@ -56,7 +56,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Config to preview email before sending
-  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
