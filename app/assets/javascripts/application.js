@@ -30,7 +30,7 @@ document.addEventListener("turbolinks:load", function() {
 		orientation: 'bottom',
 		format: 'dd/mm/yyyy',
 		autoclose: true,
-		todayHighlight: true,
 		startDate: new Date()
 	});
 });
+
