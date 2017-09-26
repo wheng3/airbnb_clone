@@ -8,8 +8,7 @@ class UsersController < Clearance::UsersController
     @user = User.new(user_from_params)
 
     if @user.save
-      welcome_email = WelcomeMailer.welcome_email(@user)
-      welcome_email.deliver_now
+      WelcomeJob.perform_later(@user)
       sign_in @user
       redirect_back_or url_after_create
     else
