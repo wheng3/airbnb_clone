@@ -11,7 +11,7 @@ module Filterable
     # URL params. Make sure you don't pass stuff directly from the web without 
     # whitelisting only the params you care about first!
     def filter(filtering_params)
-      results = self.where(nil) # create an anonymous scope
+      results = Listing.where(nil) # creates an anonymous scope
       filtering_params.each do |key, value|
         results = results.public_send(key, value) if value.present?
       end

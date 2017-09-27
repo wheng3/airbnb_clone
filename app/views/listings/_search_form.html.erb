@@ -1,0 +1,16 @@
+<%= form_tag root_path, method: 'get' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <%= text_field_tag :city, nil, class: "form-control", placeholder: 'Try "New York"'%>
+                <%= number_field_tag :bed_number, nil, class: "form-control", placeholder: 'Number of beds' %>
+                <%= number_field_tag :bathroom_number, nil, class: "form-control", placeholder: 'Number of bathrooms' %>
+                <%= number_field_tag :price_min, nil, class: "form-control", placeholder: 'Minimum price' %>
+                <%= number_field_tag :price_min, nil, class: "form-control", placeholder: 'Maximum price' %>
+                <%= button_tag type: 'submit', class: "btn btn-primary" do %>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                <% end %>
+            </div>
+        </div>
+    </div>
+<% end %>
