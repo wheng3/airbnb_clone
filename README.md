@@ -1,4 +1,4 @@
-Airbnb cloned by Wee Jing Heng with Ruby on Rails https://airbmb.herokuapp.com
+Airbnb cloned with Ruby on Rails https://airbmb.herokuapp.com
 ================
 # README
 
