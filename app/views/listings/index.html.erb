@@ -4,12 +4,15 @@
     <div class="intro-message">
       <h1>Listings</h1>
       <h3>Book unique homes and experience a city like a local.</h3>
-      <hr class="intro-divider">
+      <hr>
     </div>
   </div>
 </header>
 
+
 <div class="container">
+	<%= render partial: '/listings/search_form' %>
+
 	<div class="row">
 		<% @listings.each do |listing| %>
 			<% @img_url = listing.photos[0] %>

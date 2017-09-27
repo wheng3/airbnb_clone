@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	def index
-		@listings = Listing.order(created_at: :desc).page(params[:page]).per(8)
+		@listings = Listing.filter(params.slice(:city, :bed_number, :bathroom_number, :price_min, :price_max)).order(created_at: :desc).page(params[:page]).per(8)
 	end
 
 	def new
