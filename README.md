@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+Airbnb cloned by Wee Jing Heng with Ruby on Rails https://airbmb.herokuapp.com
+================
 # README
 
 This README would normally document whatever steps are necessary to get the
