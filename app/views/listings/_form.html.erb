@@ -1,10 +1,134 @@
-<%= form_for :listing, url: {controller: 'listings', action: 'create'} do |f| %>
-  Name			: <%= f.text_field :name, type: 'string' %><br />
-  Bed Number	: <%= f.text_field :bed_number, type: 'integer' %><br />
-  Guest Number	: <%= f.text_field :guest_number, type: 'integer' %><br />
-  Address		: <%= f.text_field :address, type: 'string' %><br />
-  Price			: <%= f.text_field :price, type: 'decimal' %><br />
-  Description   : <%= f.text_area  :description, type: 'text' %><br />
-  Photos		: <%= f.file_field :photos, multiple: true %><br />
-  <%= f.submit %>
+<%= form_for :listing, url: {controller: 'listings', action: 'create'}, class: "form-horizontal" do |form| %>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>Host a Home</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :name %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-tag"></i></div>
+                  <%= form.text_field :name, type: 'string', class: "form-control", placeholder: "Name", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :number_of_beds %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-bed"></i></div>
+                  <%= form.select(:bed_number, options_for_select((1..16).map { |i| ["#{i} #{'Bed'.pluralize(i)}", i] }), {}, {class: "form-control"}) %>
+                </div>
+            </div>
+        </div>                 
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :number_of_bathrooms %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-bath"></i></div>
+                  <%= form.select(:bathroom_number, options_for_select((1..16).map { |i| ["#{i} #{'Bathroom'.pluralize(i)}", i] }), {}, {class: "form-control"}) %>
+                </div>
+            </div>
+        </div>                 
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :number_of_guests %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-users"></i></div>
+                  <%= form.select(:guest_number, options_for_select((1..16).map { |i| ["#{i} #{'Guest'.pluralize(i)}", i] }), {}, {class: "form-control"}) %>
+                </div>
+            </div>
+        </div>                 
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :address %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-map-marker"></i></div>
+                    <%= form.text_field :address, type: 'string', class: "form-control", placeholder: "Address", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :city %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-building"></i></div>
+                    <%= form.text_field :city, type: 'string', class: "form-control", placeholder: "City", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :price %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-money"></i></div>
+                    <%= form.number_field :price, class: "form-control", placeholder: "Price", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :description %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-comment"></i></div>
+                    <%= form.text_area :description, class: "form-control", placeholder: "Description", autofocus: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <%= form.label :photos %>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group has-danger">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+                        <%= form.file_field :photos, multiple: true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <%= button_tag type: 'submit', class: "btn btn-success" do %>
+              Submit
+            <% end %>
+        </div>
+    </div>
 <% end %>

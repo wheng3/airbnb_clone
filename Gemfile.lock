@@ -277,6 +277,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails_12factor
   ransack
+  redis (~> 3.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   sidekiq (~> 5.0, >= 5.0.4)

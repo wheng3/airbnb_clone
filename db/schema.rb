@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20170920062643) do
   create_table "listings", force: :cascade do |t|
     t.string "name", null: false
     t.integer "bed_number", null: false
+    t.integer "bathroom_number", null: false
     t.integer "guest_number", null: false
     t.string "address", null: false
+    t.string "city", null: false
     t.integer "price", null: false
     t.text "description"
     t.bigint "user_id"

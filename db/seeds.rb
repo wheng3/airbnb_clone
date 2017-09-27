@@ -27,11 +27,12 @@ User.all.each { |u| uids << u.id }
 ActiveRecord::Base.transaction do
   40.times do 
     listing['name'] = Faker::App.name
-
     listing['bed_number'] = rand(1..6)
+    listing['bathroom_number'] = rand(1..3)
     listing['guest_number'] = rand(1..10)
 
     listing['address'] = Faker::Address.street_address
+    listing['city'] = Faker::Address.city
 
     listing['price'] = rand(80..500)
     listing['description'] = Faker::Hipster.sentence
